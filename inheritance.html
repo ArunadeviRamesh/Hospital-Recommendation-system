@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+body {
+background-image: url('https://image.freepik.com/free-photo/medical-mockup-with-stethoscope-red-heart_72482-690.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.header {
+ padding: 3px;
+  text-align: center;
+  font-size: 25px;
+  color:#000066;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: #000066;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+
+.sidebar a {
+  display: block;
+  color:white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+ background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+
+}
+tr:nth-child(even) {
+  background-color: #eee;
+}
+tr:nth-child(odd) {
+ background-color: #fff;
+}
+.hero-image {
+
+  height: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left:20%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+.input-icons i { 
+            position: absolute; 
+        } 
+          
+.input-icons { 
+            width: 100%; 
+            margin-bottom: 10px; 
+        } 
+          
+.icon { 
+            padding: 10px; 
+            color: green; 
+            min-width: 50px; 
+            text-align: center; 
+        } 
+</style>
+</head>
+	<script>
+		angular
+        .module('inherit', [])
+        .controller('parentcontroller', parentcontroller)
+        .controller('childcontroller', childcontroller)
+		.directive('ngGuru',function(){
+return {
+        template: '<div class="sidebar"><a href="search.html"><i class="fa fa-fw fa-home"></i> Home</a><a href="inheritance.html"><i class="fa fa-fw fa-wrench"></i> Doctor Details</a><a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a><a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a></div>'
+    }});
+
+	function parentcontroller() {
+	var pc = this;
+   pc.doctor = [
+{ id: 1, doctorname: 'kaarthick', specialist: 'MD', experience: '3',hospitalname:'kauvery'}, 
+{ id: 2, doctorname: 'sreelali', specialist: 'MD', experience: '10',hospitalname:'maruthi' }, 
+{ id: 3, doctorname: 'arman', specialist: 'BDS', experience: '5',hospitalname:'kauvery' }];
+
+ }
+
+      function childcontroller() {
+	  var cc = this;
+        cc.surgeon = [
+{ id: 1, surgeonname: 'sai sharm', specialist: 'DMsc', experience: '9',hospitalname:'kauvery'}, 
+{ id: 2, surgeonname: 'janani', specialist: 'DCM', experience: '14',hospitalname:'maruthi' }, 
+{ id: 3, surgeonname: 'shanthi', specialist: 'DS', experience: '7',hospitalname:'kauvery' }];
+      }
+	</script>
+
+<body>
+<div ng-app="inherit">
+<div ng-guru="">
+  
+</div>
+
+<div class="content">
+<div class="header" id="myHeader">
+  <h3><i>HOSPINFO</I></H3>
+  <h4 align="center"><i>CHOOSE WELL BE WELL....</i></h2>
+</div>
+
+<h1>Surgeon Details</h1>
+	<div ng-controller="parentcontroller as pc">
+	
+	<input type="text" ng-model="pc.doctor1" placeholder="search hospital name">
+		<div ng-controller="childcontroller as cc">
+		   
+		
+<table border="1" width="100%">
+  <tr><th>hospital name</th><th>surgeon name</th><th>Qualification</th><th>Experience</th></tr>
+  
+     
+<tr ng-repeat="item1 in cc.surgeon "><td>{{item1.hospitalname}}</td><td> {{ item1.surgeonname }}</td><td> {{ item1.specialist }}</td><td>{{item1.experience}}</td></tr></table>
+<h1>Doctor details</h1>
+<table border="1" width="100%"><tr><th>hospital name</th><th>doctor name</th><th>Qualification</th><th>Experience</th><th>surgeon name</th></tr><tr ng-repeat="item in pc.doctor |filter:pc.doctor1"><td>{{item.hospitalname}}</td> <td>{{ item.doctorname }} </td><td> {{ item.specialist }}</td><td> {{item.experience}}</td><td ng-repeat="item1 in cc.surgeon" ng-if="item1.id==item.id">{{item1.surgeonname}}</td>
+</tr> 
+</table>
+		</div>
+	</div></div></div>
+</body>
+
+</html>

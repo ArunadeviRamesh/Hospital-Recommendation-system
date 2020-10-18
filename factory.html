@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"> 
+    </script> 
+    <script> 
+        var application = angular.module('myApp', []); 
+          application.factory('MyFactoryService', function() { 
+            var factory = {}; 
+            factory.Add = function(a, b,c,d) { 
+                return a + b +c+d; 
+            }; 
+            return factory; 
+        }); 
+          application.controller('thisapp', function( 
+                               $scope, MyFactoryService) { 
+            $scope.today = new Date();
+                    $scope.result = function() { 
+                $scope.results =  
+                  MyFactoryService.Add($scope.num1, $scope.num2,$scope.num3,$scope.num4) 
+            }; 
+             
+        }); 
+    </script> 
+</head> 
+  <body> 
+	<style>
+	.button {
+  border-radius: 4px;
+  background-color:#cc0000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 180px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+    <div ng-app="myApp" ng-controller="thisapp"> 
+<h1 align="center">Estimated Treatment Amount<h1>
+    	<h2 align="right">Today Date : {{ today | date }}</h2>
+   	<h1 align center> Fill the Estimated Amount </h1>
+        <TABLE BORDER="1">
+  <TR>
+    <TD>Hospital Name</TD>
+    <TD>
+      <input type="text" ng-model="a" /> 
+             </TD>
+  </TR>
+  <TR>
+    <TD>Diseases Name</TD>
+    <TD><input type="text" ng-model="b" /> 
+                   </TD>
+  </TR>
+  
+  <TR>
+    <TD>Doctor charges</TD>
+    <TD><input type="number" ng-model="num1" /> </TD>
+            
+  </TR>
+<TR>
+    <TD>Hospital Charges</TD>
+    <TD><input type="number" ng-model="num2" /> </TD>
+             </TR>
+<TR>
+    <TD>Treatment Charges</TD>
+    <TD><input type="number" ng-model="num3" /> </TD>
+              </TR>
+<TR>
+    <TD>Medicine Charges</TD>
+    <TD><input type="number" ng-model="num4" /> </TD>
+            
+  </TR>
+</TABLE>
+</FORM>
+        <hr>
+        <p align="center"><button class="button" ng-click="result()"><span>Total</span></button> </p>
+        <h1 align="center">Total Amount:{{results}} </h1>
+    </div> 
+    <hr>
+    <p align="center"><a href="service.html"  align="center" class="button"><span>Add Hospital</span></a></p></p>
+
+  </body> 
+  </html>

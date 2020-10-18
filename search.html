@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+body {
+background-image: url('https://image.freepik.com/free-photo/medical-mockup-with-stethoscope-red-heart_72482-690.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.header {
+ padding: 3px;
+  text-align: center;
+  font-size: 25px;
+  color:#000066;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: #000066;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+
+.sidebar a {
+  display: block;
+  color:white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+ background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+
+}
+tr:nth-child(even) {
+  background-color: #eee;
+}
+tr:nth-child(odd) {
+ background-color: #fff;
+}
+.hero-image {
+
+  height: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left:20%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+.input-icons i { 
+            position: absolute; 
+        } 
+          
+.input-icons { 
+            width: 100%; 
+            margin-bottom: 10px; 
+        } 
+          
+.icon { 
+            padding: 10px; 
+            color: green; 
+            min-width: 50px; 
+            text-align: center; 
+        } 
+</style>
+</head>
+<body>
+<div ng-app="search" >
+<div ng-guru="">
+  
+</div>
+
+<div class="content">
+<div class="header" id="myHeader">
+  <h3><i>HOSPINFO</I></H3>
+  <h4 align="center"><i>CHOOSE WELL BE WELL....</i></h2>
+</div>
+<div ng-controller='searchcontroller as sc'>
+<h3><i>Enter Disease To Find Best Hospital <i></h3>
+
+	Search
+	<input type="text" ng-model="sc.searchName" placeholder="search item name">
+Select Display:
+	<select ng-model="sc.display">
+<option value="all"> Display all </option>
+<option value="cost"> cost </option>
+<option value="recovery"> recovery </option>
+</select>
+<div ng-switch="sc.display">
+<div ng-switch-when="all">
+  <table>
+  <tr><th>disease name</th><th>hospital name</th><th>amount</th><th>recovery</th><th><button ng-click="sc.myVar()">contact</button></th></tr>
+    <h1>Hospital details</h1>
+     
+<tr ng-repeat="item in sc.items | filter:sc.searchName"> <td>{{ item.disease }} </td><td> {{ item.name }}</td><td> Estimated amount: {{item.cost}}</td><td>{{item.recovery}}</td><td><div ng-show="sc.showme">{{item.contact}}</div></td>
+</tr> 
+</table>
+  </div>
+  <div ng-switch-when="cost">
+  <table border="1" width="100%">
+  <tr><th>disease name</th><th>hospital name</th><th>amount</th></tr>
+     <h1>Hospital based on minimum estimated cost</h1>
+     
+<tr ng-repeat="item in sc.items | orderBy:'cost'|filter:sc.searchName"> <td>{{ item.disease }} </td><td> {{ item.name }}</td><td> Estimated amount: {{item.cost}}</td>
+</tr> 
+</table>
+  </div>
+  <div ng-switch-when="recovery">
+ <table border="1" width="100%"><tr><th>disease name</th><th>hospital name</th><th>recovered</th></tr>
+  
+     <h1>Hospital based on high recovery</h1>
+     <tr ng-repeat="item in sc.items | orderBy:'recovery':'reverse'|filter:sc.searchName"><td>{{ item.disease }} </td><td> {{ item.name }}</td><td> recovery: {{item.recovery}}</td>
+</tr> 
+</table>
+</div>
+</div>
+
+
+
+</form>
+</body>
+<script>
+angular.module('search', [ ]) 
+.controller('searchcontroller', searchcontroller) 
+.service('Searchservice', Searchservice)
+.directive('ngGuru',function(){
+return {
+        template: '<div class="sidebar"><a href="search.html"><i class="fa fa-fw fa-home"></i> Home</a><a href="inheritance.html"><i class="fa fa-fw fa-wrench"></i> Doctor Details</a><a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a><a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a></div>'
+    }});
+
+function Searchservice() { 
+	var service = this; 
+	var items = [{disease:"cholera",name:"maruthi",cost:89,recovery:8,contact:9487656783},{disease:"cholera",name:"kauvery",cost:120,recovery:11,contact:9786544567},{disease:"cholera",name:"meenakshi",cost:89,recovery:8,contact:8906754567},{disease:"typhoid",name:"meenakshi",cost:119,recovery:60,contact:8902347658},{disease:"typhoid",name:"kauvery",cost:220,recovery:99,contact:6367895837},{disease:"malaria",name:"maruthi",cost:300,recovery:100,contact:7869463767}];  
+	service.getItems = function () { return items; }; 
+}
+
+searchcontroller.$inject = ['Searchservice']; 
+function searchcontroller(Searchservice) { 
+var showList = this;
+showList.showme=false;
+showList.myVar=function(){
+showList.showme=!showList.showme;}
+showList.items = Searchservice.getItems(); 
+}
+
+
+</script>
+
+</html>
