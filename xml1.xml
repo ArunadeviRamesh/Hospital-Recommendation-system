@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="hospital.xsl"?>
+<hospital_details>
+   <hospital category="private">
+       <hospitalname lang="en">ABC Hospital</hospitalname>
+       <city>Madurai</city>
+       <treatment>Cancer</treatment>
+       <cost>300000</cost> </hospital>
+   <hospital category="Government">
+       <hospitalname lang="en">DEF Hospital</hospitalname>
+       <city>chennai</city>
+       <treatment>Skin Cancer</treatment>
+       <cost>30000</cost> </hospital>
+   <hospital category="other">
+       <hospitalname lang="en">KirAruna Hospital</hospitalname>
+       <city>chennai</city>
+       <city>Madurai</city>
+       <treatment>Diabetes</treatment>
+       <cost>400000</cost> </hospital>
+   </hospital_details>

@@ -1,0 +1,32 @@
+[
+   {
+      "hospitalname": {
+         "@lang": "en",
+         "#text": "ABC Hospital"
+      },
+      "city": "Madurai",
+      "treatment": "Cancer",
+      "cost": "300000"
+   },
+   {
+      "hospitalname": {
+         "@lang": "en",
+         "#text": "DEF Hospital"
+      },
+      "city": "chennai",
+      "treatment": "Skin Cancer",
+      "cost": "30000"
+   },
+   {
+      "hospitalname": {
+         "@lang": "en",
+         "#text": "KirAruna Hospital"
+      },
+      "city": [
+         "chennai",
+         "Madurai"
+      ],
+      "treatment": "Diabetes",
+      "cost": "400000"
+   }
+]

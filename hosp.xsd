@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="hospinfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="disease"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="disease">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="hospital"/>
+      </xs:sequence>
+      <xs:attribute name="category" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hospital">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dname"/>
+        <xs:element ref="name"/>
+        <xs:element ref="amount"/>
+        <xs:element ref="recovery"/>
+        <xs:element ref="contact"/>
+        <xs:element ref="doctor"/>
+        <xs:element ref="experience"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dname" type="xs:NCName"/>
+  <xs:element name="name" type="xs:NCName"/>
+  <xs:element name="amount" type="xs:string"/>
+  <xs:element name="recovery" type="xs:integer"/>
+  <xs:element name="contact" type="xs:integer"/>
+  <xs:element name="doctor" type="xs:NCName"/>
+  <xs:element name="experience" type="xs:string"/>
+</xs:schema>

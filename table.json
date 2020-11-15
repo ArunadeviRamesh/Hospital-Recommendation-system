@@ -1,0 +1,107 @@
+[
+   {
+      "@category": "Cholera",
+      "hospital": [
+         {
+            "@name": "Kauvery",
+            "dname": "Cholera",
+            "name": "Kauvery",
+            "amount": "15000 Rs",
+            "recovery": "5000",
+            "contact": "2455678",
+            "doctor": "Dr.kaaviya",
+            "experience": "8yrs"
+         },
+         {
+            "@name": "Maruthi",
+            "dname": "Cholera",
+            "name": "Maruthi",
+            "amount": "10000 Rs",
+            "recovery": "2500",
+            "contact": "2888765",
+            "doctor": "Dr.Swaminathan",
+            "experience": "6yrs"
+         },
+         {
+            "@name": "Preethi",
+            "dname": "Cholera",
+            "name": "Preethi",
+            "amount": "10000 Rs",
+            "recovery": "4000",
+            "contact": "2477778",
+            "doctor": "Dr.Ramki",
+            "experience": "7yrs"
+         }
+      ]
+   },
+   {
+      "@category": "Typhoid",
+      "hospital": [
+         {
+            "@name": "Kauvery",
+            "dname": "Typhoid",
+            "name": "Kauvery",
+            "amount": "10000 Rs",
+            "recovery": "7000",
+            "contact": "2455678",
+            "doctor": "Dr.Swaathi",
+            "experience": "9yrs"
+         },
+         {
+            "@name": "Maruthi",
+            "dname": "Typhoid",
+            "name": "Maruthi",
+            "amount": "12000 Rs",
+            "recovery": "6000",
+            "contact": "2888765",
+            "doctor": "Dr.Vandhana",
+            "experience": "9yrs"
+         },
+         {
+            "@name": "Preethi",
+            "dname": "Typhoid",
+            "name": "Preethi",
+            "amount": "11000 Rs",
+            "recovery": "5000",
+            "contact": "2477778",
+            "doctor": "Dr.Suresh",
+            "experience": "8yrs"
+         }
+      ]
+   },
+   {
+      "@category": "Covid",
+      "hospital": [
+         {
+            "@name": "Kauvery",
+            "dname": "covid",
+            "name": "Kauvery",
+            "amount": "20000 Rs",
+            "recovery": "9000",
+            "contact": "2455678",
+            "doctor": "Dr.Vicknesh",
+            "experience": "1yr"
+         },
+         {
+            "@name": "Maruthi",
+            "dname": "covid",
+            "name": "Maruthi",
+            "amount": "22000 Rs",
+            "recovery": "10000",
+            "contact": "2888765",
+            "doctor": "Dr.Madhu",
+            "experience": "5 Months"
+         },
+         {
+            "@name": "Preethi",
+            "dname": "covid",
+            "name": "Preethi",
+            "amount": "20000 Rs",
+            "recovery": "11000",
+            "contact": "2477778",
+            "doctor": "Dr.Preethi",
+            "experience": "11 Months"
+         }
+      ]
+   }
+]

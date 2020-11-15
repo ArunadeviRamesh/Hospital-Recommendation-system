@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="hospital_details">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="hospital"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hospital">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hospitalname"/>
+        <xs:element maxOccurs="unbounded" ref="city"/>
+        <xs:element ref="treatment"/>
+        <xs:element ref="cost"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hospitalname">
+    <xs:complexType mixed="true">
+      <xs:attribute name="lang" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="treatment" type="xs:string"/>
+  <xs:element name="cost" type="xs:integer"/>
+</xs:schema>

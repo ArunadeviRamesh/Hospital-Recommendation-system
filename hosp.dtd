@@ -1,0 +1,44 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT hospinfo (disease)+>
+<!ATTLIST hospinfo
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT disease (hospital)+>
+<!ATTLIST disease
+  xmlns CDATA #FIXED ''
+  category NMTOKEN #REQUIRED>
+
+<!ELEMENT hospital (dname,name,amount,recovery,contact,doctor,
+                    experience)>
+<!ATTLIST hospital
+  xmlns CDATA #FIXED ''
+  name NMTOKEN #REQUIRED>
+
+<!ELEMENT dname (#PCDATA)>
+<!ATTLIST dname
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT amount (#PCDATA)>
+<!ATTLIST amount
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT recovery (#PCDATA)>
+<!ATTLIST recovery
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT contact (#PCDATA)>
+<!ATTLIST contact
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT doctor (#PCDATA)>
+<!ATTLIST doctor
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT experience (#PCDATA)>
+<!ATTLIST experience
+  xmlns CDATA #FIXED ''>

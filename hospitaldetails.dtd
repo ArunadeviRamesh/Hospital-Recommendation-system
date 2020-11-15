@@ -1,0 +1,20 @@
+<?xml encoding="UTF-8"?>
+<!ELEMENT hospital_details (hospital)+>
+<!ATTLIST hospital_details
+  xmlns CDATA #FIXED ''>
+<!ELEMENT hospital (hospitalname,city+,treatment,cost)>
+<!ATTLIST hospital
+  xmlns CDATA #FIXED ''>
+<!ELEMENT hospitalname (#PCDATA)>
+<!ATTLIST hospitalname
+  xmlns CDATA #FIXED ''
+  lang NMTOKEN #REQUIRED>
+<!ELEMENT city (#PCDATA)>
+<!ATTLIST city
+  xmlns CDATA #FIXED ''>
+<!ELEMENT treatment (#PCDATA)>
+<!ATTLIST treatment
+  xmlns CDATA #FIXED ''>
+<!ELEMENT cost (#PCDATA)>
+<!ATTLIST cost
+  xmlns CDATA #FIXED ''>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="table.xsl"?>
+<hospinfo>
+    <disease category="Cholera">
+        <hospital name="Kauvery">
+			<dname>Cholera</dname>
+			<name>Kauvery</name>
+			<amount> 15000 Rs</amount>
+			<recovery> 5000 </recovery>
+			<contact> 2455678 </contact>
+			<doctor> Dr.kaaviya</doctor>
+			<experience> 8yrs </experience>
+		</hospital>
+		<hospital name="Maruthi">
+			<dname>Cholera</dname>
+			<name>Maruthi</name>
+			<amount> 10000 Rs</amount>
+			<recovery> 2500 </recovery>
+			<contact> 2888765 </contact>
+			<doctor> Dr.Swaminathan</doctor>
+			<experience> 6yrs </experience>
+		</hospital>
+		<hospital name="Preethi">
+			<dname>Cholera</dname>
+			<name>Preethi</name>
+			<amount> 10000 Rs</amount>
+			<recovery> 4000 </recovery>
+			<contact> 2477778 </contact>
+			<doctor> Dr.Ramki</doctor>
+			<experience> 7yrs </experience>
+		</hospital>
+    </disease>
+    <disease category="Typhoid">
+		<hospital name="Kauvery">
+			<dname>Typhoid</dname>
+			<name>Kauvery</name>
+			<amount> 10000 Rs</amount>
+			<recovery> 7000 </recovery>
+			<contact> 2455678 </contact>
+			<doctor> Dr.Swaathi</doctor>
+			<experience> 9yrs </experience>
+		</hospital>
+		<hospital name="Maruthi">
+			<dname>Typhoid</dname>
+			<name>Maruthi</name>
+			<amount> 12000 Rs</amount>
+			<recovery> 6000 </recovery>
+			<contact> 2888765 </contact>
+			<doctor> Dr.Vandhana</doctor>
+			<experience> 9yrs </experience>
+		</hospital>
+		<hospital name="Preethi">
+			<dname>Typhoid</dname>
+			<name>Preethi</name>
+			<amount> 11000 Rs</amount>
+			<recovery> 5000 </recovery>
+			<contact> 2477778 </contact>
+			<doctor> Dr.Suresh</doctor>
+			<experience> 8yrs </experience>
+		</hospital>
+	</disease>
+	<disease category="Covid">
+		<hospital name="Kauvery">
+			<dname>covid</dname>
+			<name>Kauvery</name>
+			<amount> 20000 Rs</amount>
+			<recovery> 9000 </recovery>
+			<contact> 2455678 </contact>
+			<doctor> Dr.Vicknesh</doctor>
+			<experience> 1yr </experience>
+		</hospital>
+		<hospital name="Maruthi">
+			<dname>covid</dname>
+			<name>Maruthi</name>
+			<amount> 22000 Rs</amount>
+			<recovery> 10000 </recovery>
+			<contact> 2888765 </contact>
+			<doctor> Dr.Madhu</doctor>
+			<experience> 5 Months </experience>
+		</hospital>
+		<hospital name="Preethi">
+			<dname>covid</dname>
+			<name>Preethi</name>
+			<amount> 20000 Rs</amount>
+			<recovery> 11000 </recovery>
+			<contact> 2477778 </contact>
+			<doctor> Dr.Preethi</doctor>
+			<experience> 11 Months </experience>
+		</hospital>
+	</disease>
+</hospinfo>

@@ -1,0 +1,44 @@
+<html>
+<body>
+<h1 align="center"> Top Hospital Details for Cancer Treatment</h1>
+<table border="1" align="center" style="width:100%" cellpadding ="5">
+  				<tr>
+  					<th>Hospital Name</th><th><p id="demo" align="center"></p>
+</th></tr>
+  				<tr>
+  					<th>City</th><th><p id="demo1" align="center"></p>
+</th></tr>
+  				<tr>
+  					<th>Cost</th><th><p id="demo2" align="center"></p>
+</th></tr>
+  				<tr>
+  					<th>Treatment</th><th><p id="demo3" align="center"></p>
+</th></tr>
+  	
+<script>
+var text, parser, xmlDoc;
+
+text = "<hospital_details><hospital>" +
+"<hospitalname>ABC Hospital</hospitalname>" +
+"<city>Madurai</city>" +
+"<treatment>cancer</treatment>" + "<cost>3000000</cost>"
+"</hospital></hospital_details>" + "<hospital_details><hospital>" +
+"<hospitalname>Kiraruna Hospital</hospitalname>" +
+"<city>chennai</city>" +
+"<treatment>diabetes</treatment>" + "<cost>50000</cost>"
+"</hospital></hospital_details>";
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text,"text/xml");
+document.getElementById("demo").innerHTML =
+xmlDoc.getElementsByTagName("hospitalname")[0].childNodes[0].nodeValue;
+document.getElementById("demo1").innerHTML =
+xmlDoc.getElementsByTagName("city")[0].childNodes[0].nodeValue;
+document.getElementById("demo2").innerHTML =
+xmlDoc.getElementsByTagName("cost")[0].childNodes[0].nodeValue;
+document.getElementById("demo3").innerHTML =
+xmlDoc.getElementsByTagName("treatment")[0].childNodes[0].nodeValue;
+
+</script>
+
+</body>
+</html>
